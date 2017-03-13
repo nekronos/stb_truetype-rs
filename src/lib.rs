@@ -384,7 +384,7 @@ impl<Data: Deref<Target=[u8]>> FontInfo<Data> {
         self.get_glyph_shape(self.find_glyph_index(unicode_codepoint))
     }
 
-    fn get_glyf_offset(&self, glyph_index: u32) -> Option<u32> {
+    pub fn get_glyf_offset(&self, glyph_index: u32) -> Option<u32> {
         let g1;
         let g2;
         if glyph_index >= self.num_glyphs || self.index_to_loc_format >= 2 {
